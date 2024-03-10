@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Whisper&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Oxanium:wght@200..800&family=Recursive:wght@300..1000&family=Whisper&display=swap');
+/* variaveis */
+:root {
+    --white-color: #fff;
+    --bread-color: rgb(203, 149, 102);
+}
+
+/*reset*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 900;
+    font-family: "Oxanium", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    font-size: 1.6rem;
+    background: rgb(247, 225, 175);
+    background-size: cover;
+    flex-direction: column;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+/*classes*/
+
+main .logo {
+    width: 40%;
+    height: 40%;
+    margin: -50px 15px;
+}
+
+main .text {
+    text-transform: uppercase;
+    font-size: 3rem;
+    width: 60%;
+}
+
+.secao {
+    background-color: var(--white-color);
+    min-height: 100vh;
+    margin: 0 150px;
+}
+
+.about {
+    background: linear-gradient(rgb(247, 225, 175), var(--bread-color));
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.about .text {
+    text-align: center;
+    padding: 10%;
+}
+
+.about .left {
+    background: url("../imgs/imagePaoLeft.webp") center center no-repeat;
+    background-size: cover;
+}
+
+.about .right {
+    background: url("../imgs/imagePaoRight.webp") center center no-repeat;
+    background-size: cover;
+}
+
+.about .image {
+    padding: 10%;
+    text-align: center;
+}
+
+.about h1 {
+    color: #fff;
+}
+
+.local {
+    background: linear-gradient(var(--bread-color), rgb(247, 225, 175));
+    text-align: center;
+    color: var(--white-color);
+
+}
+
+.local iframe {
+    width: 100%;
+}
+
+.contact {
+    background: linear-gradient(rgb(247, 225, 175), var(--bread-color));
+    padding: 20px;
+    font-weight: bold;
+}
+
+.contact h1{
+    font-size: 3rem;
+}
+
+.contact h1, .contact label{
+    color: var(--bread-color);
+    font-weight: bold;
+}
+
+.completeArea {
+    display: grid;
+    grid-template-areas:
+     "name surname"
+     "tel tel"
+     "btn btn"
+     ;
+    gap: 5px;
+}
+
+.completeArea label {
+    display: block;
+}
+
+.completeArea input {
+    height: 50px;
+}
+
+.completeArea #name {
+    grid-area: name;
+}
+
+.completeArea #surname {
+    grid-area: surname;
+}
+
+.completeArea #tel {
+    grid-area: tel;
+}
+
+.contactButton{
+    grid-area: btn;
+    width: 100%;
+    height: 50px;
+    border: none;
+    background-color: var(--bread-color);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/*tags*/
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 5px;
+    background: rgb(245, 220, 165);
+    margin: 0 150px;
+    font-family: "Whisper", cursive;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+ul li a {
+    margin: 0 20px;
+    padding: 5px 25px;
+    border-radius: 10px;
+    transition: 500ms;
+    font-weight: bold;
+}
+
+ul li a:hover {
+    background-color: var(--bread-color);
+}
+
+
+main {
+    background:url(../imgs/background.jpg) center center no-repeat;
+    background-size: cover;
+    min-height: 89vh;
+    margin: 0 150px;
+    display: flex;
+    align-items: center;
+}
+
+main h2 span {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--bread-color);
+}
+/*footer*/
+
+footer{
+    display: flex;
+    height: 6vh;
+    background-color: rgb(63, 46, 46);
+    color: #fff;
+    font-weight: bold;
+    margin: 0 150px;
+    justify-content: center;
+    align-items: center;
+}
+
+/*responsive*/
+
+header .menu {
+    display: none;
+    width: 6rem;
+    height: 6rem;
+    align-self: flex-end;
+}
+
+header .burger {
+    background-color: #000;
+    position: relative;
+    display: block;
+    width: 3rem;
+    height: .2rem;
+    top: 2.9rem;
+
+    transition: .5s ease-in-out;
+}
+
+header .burger::before,
+header .burger::after {
+    content: "";
+    background-color: #000000;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: .3s ease-in-out;
+}
+
+header .burger::before {
+    top: -1rem;
+}
+
+header .burger::after {
+    bottom: -1rem;
+}
+
+header input {
+    display: none;
+}
+
+header input:checked~label .burger {
+    transform: rotate(45deg);
+}
+
+header input:checked~label .burger::before {
+    transform: rotate(90deg);
+    top: 0;
+}
+
+header input:checked~label .burger::after {
+    transform: rotate(90deg);
+    bottom: 0;
+}
+
+@media (max-width:900px) {
+    header .menu {
+        display: block;
+    }
+
+    header nav ul {
+        display: none;
+    }
+
+    header input:checked~ul {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+        top: .8rem;
+        left: 0;
+        z-index: 1;
+    }
+
+    nav ul {
+        width: 20rem;
+        background-color: rgb(247, 225, 175);
+        padding: 2rem;
+    }
+
+    nav ul li {
+        margin: 1rem;
+    }
+
+    nav ul li a {
+        text-align: center;
+    }
+
+    textarea{
+        width: 100%;
+    }
+    
+}
+
+
+@media (max-width:576px){
+    .logo{
+        display: none;
+    }
+    .about .text {
+        display: none;
+    }
+    .completeArea {
+        grid-template-areas:
+         "name"
+         "surname"
+         "tel"
+         "btn"
+         ;
+        }
+}
+
+@media (max-width:415px){
+    body{
+        text-align: center;
+    }
+    .secao, header, main, footer{
+        margin: 0;
+    }
+
+    .header h1{
+        display: none;
+    }
+    .main h2{
+        font-size: 2.5rem;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .main h2 span{
+        padding: 0;
+        border-radius: 0;
+    }
+    .about{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: auto;
+    }
+}
